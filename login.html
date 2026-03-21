@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Lifestream</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="info-side">
+            <div class="logo-large">
+                <div class="white-drop"><i class="fa-solid fa-droplet"></i></div>
+                <h2>LIFESTREAM</h2>
+            </div>
+            <h1>Save Lives. Make Impact. Be a Hero.</h1>
+            <p>Join thousands of heroes making real-time differences. Manage donations, respond to emergencies, and be part of something bigger.</p>
+            
+            <ul class="features">
+                <li><i class="fa-solid fa-heart"></i> Smart Blood Matching AI</li>
+                <li><i class="fa-solid fa-bolt"></i> Instant Emergency Alerts</li>
+                <li><i class="fa-solid fa-shield-halved"></i> Blockchain Verified</li>
+            </ul>
+        </div>
+
+        <div class="form-side">
+            <div class="form-wrapper">
+                <h2>Welcome Back!</h2>
+                <p>Access your mission control dashboard</p>
+
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-user-gear"></i> SELECT YOUR ROLE</label>
+                        <select id="role">
+                            <option>Choose your access level</option>
+                            <option value="donor">Donor</option>
+                            <option value="recipient">Recipient / User</option>
+                            <option value="admin">Admin / Hospital</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-envelope"></i> EMAIL ADDRESS</label>
+                        <input type="email" id="email" placeholder="hero@lifestream.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-lock"></i> SECURE PASSWORD</label>
+                        <input type="password" id="password" placeholder="••••••••••••" required>
+                    </div>
+
+                    <div class="form-footer">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-enter">
+                        <i class="fa-solid fa-bolt"></i> ENTER DASHBOARD →
+                    </button>
+                </form>
+
+                <p class="signup-link">New hero joining us? <a href="signup.html">Create Your Account</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

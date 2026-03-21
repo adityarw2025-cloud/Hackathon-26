@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Lifestream</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2><i class="fa-solid fa-droplet"></i> LIFESTREAM</h2>
+        <ul class="nav-links">
+            <li><a href="#" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fa-solid fa-user-check"></i> Verify Donors</a></li>
+            <li><a href="#"><i class="fa-solid fa-layer-group"></i> Blood Inventory</a></li>
+            <li><a href="#"><i class="fa-solid fa-truck-medical"></i> Active Requests</a></li>
+            <li><a href="#"><i class="fa-solid fa-gears"></i> Settings</a></li>
+        </ul>
+        <div class="logout-section">
+            <a href="login.html" style="color: #ff4d4d;"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="welcome">
+                <h1>Hospital Command Center</h1>
+                <p>Monitoring real-time blood supply & donor safety.</p>
+            </div>
+            <div class="admin-profile">
+                <span class="alert-bell"><i class="fa-solid fa-bell"></i><span class="dot"></span></span>
+                <strong>Admin: City Hospital</strong>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #fff0f0; color: #e63946;"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div><h3>120 Units</h3><p>Total Stock</p></div>
+            </div>
+            <div class="stat-card alert-border">
+                <div class="stat-icon" style="background: #fffbeb; color: #f59e0b;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div><h3>O- Negative</h3><p style="color: #e63946; font-weight: bold;">Low Stock Alert!</p></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #f0fdf4; color: #16a34a;"><i class="fa-solid fa-user-shield"></i></div>
+                <div><h3>14</h3><p>Pending Verifications</p></div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div class="table-header">
+                <h2><i class="fa-solid fa-shield-virus"></i> Donor Safety Gate</h2>
+                <button class="refresh-btn"><i class="fa-solid fa-rotate"></i> Sync Data</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>DONOR NAME</th>
+                        <th>BLOOD TYPE</th>
+                        <th>DOCUMENT</th>
+                        <th>AI SAFETY CHECK</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody id="verification-table">
+                    <tr>
+                        <td><strong>Aditya</strong></td>
+                        <td>B+ Positive</td>
+                        <td><a href="#" class="doc-link">Medical_Report.pdf</a></td>
+                        <td><span class="status-badge approved">Valid / Clear</span></td>
+                        <td><button class="approve-btn">Verify</button> <button class="reject-btn">Reject</button></td>
+                    </tr>
+                    <tr>
+                        <td>Rahul Sharma</td>
+                        <td>O- Negative</td>
+                        <td><a href="#" class="doc-link">ID_Proof.jpg</a></td>
+                        <td><span class="status-badge pending">Awaiting Scan...</span></td>
+                        <td><button class="approve-btn">Verify</button> <button class="reject-btn">Reject</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
