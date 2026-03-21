@@ -1,7 +1,7 @@
 // 1. Initialize Supabase 
 // Replace these with your actual project URL and Anon Key from the Supabase Dashboard
-const _supabaseUrl = 'https://your-project-id.supabase.co';
-const _supabaseKey = 'your-anon-key-here';
+const _supabaseUrl = 'https://uobxejalrnrwttqwjvij.supabase.co';
+const _supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVvYnhlamFscm5yd3R0cXdqdmlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMTQ1MDMsImV4cCI6MjA4OTY5MDUwM30.YQYKqjBIIHnsdR7o1gOp-szUD4pMwRQqdFejAod-KrE';
 
 // Check if supabase is loaded from the CDN in HTML
 let supabase;
