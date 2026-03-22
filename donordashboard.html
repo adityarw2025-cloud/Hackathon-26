@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Hero Dashboard | Lifestream</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="donor.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fa-solid fa-droplet"></i> LIFESTREAM
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showDonorSection('overview')" id="link-overview" class="active"><i class="fa-solid fa-house-user"></i> My Profile</a></li>
+            <li><a href="#" onclick="showDonorSection('appointments')" id="link-appointments"><i class="fa-solid fa-calendar-check"></i> Book Donation</a></li>
+            <li><a href="#" onclick="showDonorSection('history')" id="link-history"><i class="fa-solid fa-clock-rotate-left"></i> My History</a></li>
+            <li><a href="#" onclick="showDonorSection('rewards')" id="link-rewards"><i class="fa-solid fa-award"></i> My Badges</a></li>
+        </ul>
+        <a href="login.html" class="logout-link"><i class="fa-solid fa-power-off"></i> Logout</a>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="welcome-text">
+                <h1>Welcome Back, Hero!</h1>
+                <p>Your blood has the power to save lives today.</p>
+            </div>
+            <div class="hero-status-tag">
+                <i class="fa-solid fa-shield-heart"></i> Verified Donor
+            </div>
+        </header>
+
+        <div id="section-overview" class="donor-section active">
+            <div class="donor-grid">
+                
+                <div class="glass-card donor-card">
+                    <div class="card-top">
+                        <img src="https://ui-avatars.com/api/?name=Aditya&background=e63946&color=fff" alt="Profile">
+                        <div class="card-meta">
+                            <h2>Aditya</h2>
+                            <span>ID: #LS-2026-99</span>
+                        </div>
+                        <div class="blood-type-badge">B+</div>
+                    </div>
+                    <div class="card-qr">
+                        <i class="fa-solid fa-qrcode"></i>
+                        <p>Scan at Hospital for Quick Check-in</p>
+                    </div>
+                </div>
+
+                <div class="glass-card timer-card">
+                    <h3>Next Donation Eligibility</h3>
+                    <div class="countdown">
+                        <div class="time-circle">
+                            <span id="days-left">72</span>
+                            <small>Days To Go</small>
+                        </div>
+                    </div>
+                    <p>Status: <span class="status-waiting">Recovering</span></p>
+                </div>
+
+                <div class="glass-card impact-card">
+                    <h3>Your Total Impact</h3>
+                    <div class="impact-stats">
+                        <div class="stat"><strong>03</strong><p>Lives Saved</p></div>
+                        <div class="stat"><strong>02</strong><p>Donations</p></div>
+                        <div class="stat"><strong>900ml</strong><p>Total Contributed</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compatibility-container glass-card">
+                <h3><i class="fa-solid fa-circle-nodes"></i> Your Compatibility</h3>
+                <div class="comp-flex">
+                    <div class="comp-box">
+                        <p>You can Give to:</p>
+                        <div class="types"><span>B+</span> <span>AB+</span></div>
+                    </div>
+                    <div class="comp-box">
+                        <p>You can Receive from:</p>
+                        <div class="types"><span>B+</span> <span>B-</span> <span>O+</span> <span>O-</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-appointments" class="donor-section">
+            <div class="glass-card">
+                <h2>Schedule a Donation</h2>
+                <p>Find the nearest blood bank and book your slot.</p>
+                </div>
+        </div>
+    </div>
+
+    <script src="donor.js"></script>
+</body>
+</html>

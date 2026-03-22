@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+    --hero-red: #e63946;
+    --hero-blue: #243b55;
+    --text-main: #1e293b;
+    --glass: rgba(255, 255, 255, 0.8);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body { background: #fdfdfd; background-image: radial-gradient(#e6394610 1px, transparent 1px); background-size: 30px 30px; display: flex; min-height: 100vh; }
+
+/* Sidebar */
+.sidebar { width: 260px; background: var(--hero-blue); color: white; padding: 30px 20px; height: 100vh; position: fixed; }
+.sidebar-brand { font-size: 1.5rem; font-weight: 800; color: var(--hero-red); margin-bottom: 50px; }
+.nav-links { list-style: none; flex-grow: 1; }
+.nav-links a { color: #cbd5e1; text-decoration: none; padding: 15px; display: block; border-radius: 12px; transition: 0.3s; margin-bottom: 5px; }
+.nav-links a.active, .nav-links a:hover { background: rgba(255,255,255,0.1); color: white; }
+.logout-link { color: #ff6b6b; text-decoration: none; position: absolute; bottom: 30px; font-weight: 700; }
+
+/* Main Content */
+.main-content { margin-left: 260px; flex-grow: 1; padding: 50px; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.hero-status-tag { background: #e8f5e9; color: #2e7d32; padding: 8px 15px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; }
+
+/* Donor Grid Layout */
+.donor-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 25px; margin-bottom: 25px; }
+.glass-card { background: white; border-radius: 25px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; }
+
+/* Donor Card Styling */
+.donor-card { background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%); color: white; position: relative; }
+.card-top { display: flex; align-items: center; gap: 15px; }
+.card-top img { width: 60px; height: 60px; border-radius: 50%; border: 3px solid rgba(255,255,255,0.2); }
+.blood-type-badge { position: absolute; top: 30px; right: 30px; background: var(--hero-red); padding: 10px 15px; border-radius: 12px; font-weight: 800; font-size: 1.2rem; }
+.card-qr { margin-top: 30px; text-align: center; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; }
+.card-qr i { font-size: 3rem; margin-bottom: 10px; }
+
+/* Timer Circle */
+.time-circle { width: 120px; height: 120px; border: 8px solid #f1f5f9; border-top-color: var(--hero-red); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 20px auto; }
+.time-circle span { font-size: 1.8rem; font-weight: 800; color: var(--hero-red); }
+
+/* Impact Stats */
+.impact-stats { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+.stat { display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 1px solid #f1f5f9; }
+.stat strong { font-size: 1.2rem; color: var(--hero-blue); }
+
+/* Compatibility */
+.comp-flex { display: flex; gap: 40px; margin-top: 20px; }
+.types { margin-top: 10px; display: flex; gap: 10px; }
+.types span { background: #f8fafc; padding: 5px 12px; border-radius: 8px; font-weight: 700; color: var(--hero-red); border: 1px solid #e2e8f0; }
+
+/* Sections */
+.donor-section { display: none; animation: slideUp 0.4s ease; }
+.donor-section.active { display: block; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

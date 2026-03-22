@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lifestream Signup</title>
+  <link rel="stylesheet" href="register.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="top-link">
+    Already a hero? <a href="#">Login here</a>
+  </div>
+
+  <div class="container">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+      <div class="logo">💧</div>
+      <h2>LIFESTREAM<br>Become a Life Saver Today.</h2>
+      <p>Create your profile to start donating or requesting blood in your local area.</p>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+      <form id="signupForm">
+
+        <label>FULL NAME</label>
+        <input type="text" id="name" placeholder="Aditya">
+
+        <label>EMAIL ADDRESS</label>
+        <input type="email" id="email" placeholder="hero@lifestream.com">
+
+        <label>SELECT YOUR ROLE</label>
+        <select id="role">
+          <option value="">-- Choose Account Type --</option>
+          <option value="donor">Donor</option>
+          <option value="receiver">Receiver</option>
+          <option value="user">User</option>
+        </select>
+
+        <label>SECURE PASSWORD</label>
+        <input type="password" id="password">
+
+        <button type="submit" class="btn">Register as Hero</button>
+
+        <p id="message"></p>
+
+      </form>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
