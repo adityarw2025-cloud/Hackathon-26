@@ -3,86 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel | Lifestream</title>
-    <link rel="stylesheet" href="common.css">
+    <title>Lifestream | Ultra Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="common.css">
 </head>
 <body>
 
     <div class="sidebar">
-        <h2><i class="fa-solid fa-droplet"></i> LIFESTREAM</h2>
+        <div class="sidebar-brand">
+            <div class="drop-icon"><i class="fa-solid fa-droplet"></i></div>
+            <span>LIFESTREAM</span>
+        </div>
         <ul class="nav-links">
-            <li><a href="#" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
-            <li><a href="#"><i class="fa-solid fa-user-check"></i> Verify Donors</a></li>
-            <li><a href="#"><i class="fa-solid fa-layer-group"></i> Blood Inventory</a></li>
-            <li><a href="#"><i class="fa-solid fa-truck-medical"></i> Active Requests</a></li>
-            <li><a href="#"><i class="fa-solid fa-gears"></i> Settings</a></li>
+            <li><a href="#" onclick="showSection('dashboard')" id="link-dashboard" class="active"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li><a href="#" onclick="showSection('verify')" id="link-verify"><i class="fa-solid fa-user-shield"></i> Verify Donors</a></li>
+            <li><a href="#" onclick="showSection('inventory')" id="id-inventory"><i class="fa-solid fa-boxes-stacked"></i> Blood Inventory</a></li>
+            <li><a href="#" onclick="showSection('requests')" id="link-requests"><i class="fa-solid fa-truck-medical"></i> Active Requests</a></li>
+            <li><a href="#" onclick="showSection('settings')" id="link-settings"><i class="fa-solid fa-gears"></i> Settings</a></li>
         </ul>
-        <div class="logout-section">
-            <a href="login.html" style="color: #ff4d4d;"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        <div class="sidebar-footer">
+            <a href="login.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout System</a>
         </div>
     </div>
 
     <div class="main-content">
         <header>
-            <div class="welcome">
-                <h1>Hospital Command Center</h1>
-                <p>Monitoring real-time blood supply & donor safety.</p>
+            <div class="header-left">
+                <h1 id="page-title">Hospital Command Center</h1>
+                <p id="page-subtitle">Real-time biometrics and supply chain monitoring.</p>
             </div>
-            <div class="admin-profile">
-                <span class="alert-bell"><i class="fa-solid fa-bell"></i><span class="dot"></span></span>
-                <strong>Admin: City Hospital</strong>
+            <div class="header-right">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search donors or requests...">
+                </div>
+                <div class="admin-profile">
+                    <img src="https://ui-avatars.com/api/?name=City+Hospital&background=e63946&color=fff" alt="Admin">
+                    <div class="admin-info">
+                        <strong>City Hospital</strong>
+                        <span>Super Admin</span>
+                    </div>
+                </div>
             </div>
         </header>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon" style="background: #fff0f0; color: #e63946;"><i class="fa-solid fa-heart-pulse"></i></div>
-                <div><h3>120 Units</h3><p>Total Stock</p></div>
+        <div id="section-dashboard" class="content-section active">
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-icon pink"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="stat-data"><h3>120 Units</h3><p>Total Stock</p></div>
+                    <div class="stat-graph"><i class="fa-solid fa-arrow-up"></i> 12%</div>
+                </div>
+                <div class="stat-card alert-card pulse">
+                    <div class="stat-icon yellow"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div class="stat-data"><h3>O- Negative</h3><p>Critical Low!</p></div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon green"><i class="fa-solid fa-user-check"></i></div>
+                    <div class="stat-data"><h3>14</h3><p>Pending Verification</p></div>
+                </div>
             </div>
-            <div class="stat-card alert-border">
-                <div class="stat-icon" style="background: #fffbeb; color: #f59e0b;"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                <div><h3>O- Negative</h3><p style="color: #e63946; font-weight: bold;">Low Stock Alert!</p></div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon" style="background: #f0fdf4; color: #16a34a;"><i class="fa-solid fa-user-shield"></i></div>
-                <div><h3>14</h3><p>Pending Verifications</p></div>
+
+            <div class="dashboard-flex">
+                <div class="table-container recent-activity">
+                    <h3><i class="fa-solid fa-clock-rotate-left"></i> Live Activity Feed</h3>
+                    <ul class="activity-list">
+                        <li><span class="time">12:45</span> <p>New Donor <strong>Aditya</strong> uploaded medical docs.</p> <span class="tag">New</span></li>
+                        <li><span class="time">11:20</span> <p>Emergency Request: <strong>O+ Positive</strong> from Ward 4.</p> <span class="tag urgent">Urgent</span></li>
+                        <li><span class="time">09:15</span> <p>Blood Batch #4421 verified by AI Safety Gate.</p> <span class="tag success">Safe</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <div class="table-container">
-            <div class="table-header">
-                <h2><i class="fa-solid fa-shield-virus"></i> Donor Safety Gate</h2>
-                <button class="refresh-btn"><i class="fa-solid fa-rotate"></i> Sync Data</button>
+        <div id="section-verify" class="content-section">
+            <div class="table-container fade-in">
+                <div class="table-header">
+                    <h3><i class="fa-solid fa-shield-halved"></i> Safety Verification Gate</h3>
+                    <div class="filters">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Pending</button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr><th>DONOR</th><th>BLOOD GROUP</th><th>DOCUMENTATION</th><th>AI RISK SCORE</th><th>ACTION</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="user-cell"><div class="avatar">A</div><strong>Aditya</strong></div></td>
+                            <td><span class="blood-badge">B+</span></td>
+                            <td><a href="#" class="file-link"><i class="fa-solid fa-file-pdf"></i> fitness_cert.pdf</a></td>
+                            <td><div class="risk-bar"><div class="risk-fill" style="width: 95%"></div><span>Low Risk</span></div></td>
+                            <td><button class="verify-btn" onclick="animateVerify(this)">Approve</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>DONOR NAME</th>
-                        <th>BLOOD TYPE</th>
-                        <th>DOCUMENT</th>
-                        <th>AI SAFETY CHECK</th>
-                        <th>ACTION</th>
-                    </tr>
-                </thead>
-                <tbody id="verification-table">
-                    <tr>
-                        <td><strong>Aditya</strong></td>
-                        <td>B+ Positive</td>
-                        <td><a href="#" class="doc-link">Medical_Report.pdf</a></td>
-                        <td><span class="status-badge approved">Valid / Clear</span></td>
-                        <td><button class="approve-btn">Verify</button> <button class="reject-btn">Reject</button></td>
-                    </tr>
-                    <tr>
-                        <td>Rahul Sharma</td>
-                        <td>O- Negative</td>
-                        <td><a href="#" class="doc-link">ID_Proof.jpg</a></td>
-                        <td><span class="status-badge pending">Awaiting Scan...</span></td>
-                        <td><button class="approve-btn">Verify</button> <button class="reject-btn">Reject</button></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
+
+        <div id="section-inventory" class="content-section">
+            <div class="inventory-grid">
+                <div class="inv-card">
+                    <div class="inv-header"><h2>A+</h2> <span class="units">25 Units</span></div>
+                    <div class="progress-wrap"><div class="progress-fill" style="width: 75%"></div></div>
+                    <p>Status: <span class="status-good">Healthy</span></p>
+                </div>
+                <div class="inv-card critical">
+                    <div class="inv-header"><h2>O-</h2> <span class="units">02 Units</span></div>
+                    <div class="progress-wrap"><div class="progress-fill danger" style="width: 15%"></div></div>
+                    <p>Status: <span class="status-bad">Critical Low</span></p>
+                    <button class="broadcast-btn">Broadcast to Donors</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-requests" class="content-section">
+            <div class="table-container">
+                <h3><i class="fa-solid fa-truck-fast"></i> Active Emergency Requests</h3>
+                <table>
+                    <thead><tr><th>REQ ID</th><th>PATIENT</th><th>BLOOD</th><th>URGENCY</th><th>TIMER</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>#REQ-901</td>
+                            <td>John Doe</td>
+                            <td><strong style="color:red">O-</strong></td>
+                            <td><span class="urgency-high">Emergency</span></td>
+                            <td><span class="timer">14:22 mins</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="section-settings" class="content-section">
+            <div class="settings-box">
+                <h3>System Configuration</h3>
+                <div class="form-group"><label>Hospital Name</label><input type="text" value="City Central Hospital"></div>
+                <div class="form-group"><label>Alert Threshold (Units)</label><input type="number" value="5"></div>
+                <div class="form-group"><label>Auto-Broadcast</label><input type="checkbox" checked></div>
+                <button class="save-btn">Update System</button>
+            </div>
+        </div>
+
     </div>
 
     <script src="admin.js"></script>
